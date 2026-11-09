@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
-import { ExternalLink, Github, ChevronLeft, ChevronRight, Mail, Globe, Paintbrush, Sparkles } from 'lucide-react';
+import { ExternalLink, Github, ChevronLeft, ChevronRight, Mail, Globe, Paintbrush, Sparkles, BrainCircuit, Smartphone } from 'lucide-react';
 
 const projects = [
   {
@@ -86,7 +86,7 @@ const projects = [
     image: '/images/p8.png',
     images: ['/images/p8.png'],
     emoji: '🩺',
-    type: 'web'
+    type: 'ai'
   },
   {
     title: 'Boutique E-commerce Admin Panel',
@@ -162,15 +162,15 @@ const projects = [
   },
   {
     title: 'Fitness Coaching Mobile App',
-    description: 'Complete fitness app for coaches and clients with payments and progress tracking.',
-    tech: ['Figma', 'Mobile', 'Fitness Tech'],
+    description: 'Mobile app concept for fitness coaches and clients, featuring workout plans, client management, payments, and progress tracking.',
+    tech: ['Figma', 'Mobile App Design', 'Fitness Tech'],
     features: ['Client management', 'Payments', 'Workout library'],
     link: '#',
     github: '#',
     image: '/images/p14.png',
     images: ['/images/s1.png', '/images/s2.png', '/images/s3.png', '/images/s4.png', '/images/s5.png', '/images/s6.png', '/images/s7.png', '/images/s8.png'],
     emoji: '💪',
-    type: 'figma'
+    type: 'mobile'
   },
   {
     title: 'Fitness Platform Admin Dashboard',
@@ -188,7 +188,7 @@ const projects = [
 
 export default function ProjectsSection({ scrollToSection }) {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [filterPages, setFilterPages] = useState({ all: 0, web: 0, figma: 0 });
+  const [filterPages, setFilterPages] = useState({ all: 0, web: 0, ai: 0, mobile: 0, figma: 0 });
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -266,20 +266,22 @@ export default function ProjectsSection({ scrollToSection }) {
           <h2 className="text-sm text-blue-500 font-semibold mb-4 uppercase tracking-wider">Portfolio</h2>
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Featured Projects</h3>
           <p className="text-gray-400 max-w-2xl mx-auto text-xs sm:text-sm md:text-base px-4">
-            Here are some of my recent works. Each project represents a unique challenge and solution.
+            A selection of web applications, AI-powered solutions, and mobile app experiences built and designed for real-world needs.
           </p>
         </div>
 
         <div className="flex justify-center mb-8 sm:mb-12 px-2">
-          <div className="inline-flex flex-col sm:flex-row bg-white/5 border border-white/10 rounded-xl p-1 backdrop-blur-sm w-full max-w-md">
+          <div className="inline-flex flex-wrap justify-center gap-1 bg-white/5 border border-white/10 rounded-xl p-1 backdrop-blur-sm w-full max-w-4xl">
             {[
               { key: 'all', label: 'All', icon: Sparkles, count: projects.length },
-              { key: 'web', label: 'Web Dev', icon: Globe, count: projects.filter(p => p.type === 'web').length },
-              { key: 'figma', label: 'UI/UX', icon: Paintbrush, count: projects.filter(p => p.type === 'figma').length }
+              { key: 'web', label: 'Web Development', icon: Globe, count: projects.filter(p => p.type === 'web').length },
+              { key: 'ai', label: 'AI Solutions', icon: BrainCircuit, count: projects.filter(p => p.type === 'ai').length },
+              { key: 'mobile', label: 'Mobile Apps', icon: Smartphone, count: projects.filter(p => p.type === 'mobile').length },
+              { key: 'figma', label: 'UI/UX Design', icon: Paintbrush, count: projects.filter(p => p.type === 'figma').length }
             ].map(cat => {
               const IconComponent = cat.icon;
               return (
-                <button key={cat.key} onClick={() => handleCategoryChange(cat.key)} className={`relative px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-medium transition-all flex items-center justify-center gap-1 sm:gap-2 flex-1 text-xs sm:text-sm ${activeCategory === cat.key ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}>
+                <button key={cat.key} onClick={() => handleCategoryChange(cat.key)} className={`relative px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-medium transition-all flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm ${activeCategory === cat.key ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}>
                   <IconComponent className="w-3 h-3 sm:w-4 sm:h-4" />
                   <span className="whitespace-nowrap">{cat.label}</span>
                   <span className={`px-1.5 py-0.5 text-xs rounded-full min-w-[20px] ${activeCategory === cat.key ? 'bg-white/20' : 'bg-white/10'}`}>
@@ -295,8 +297,8 @@ export default function ProjectsSection({ scrollToSection }) {
           {displayedProjects.map((project, i) => (
             <div key={i} className="group bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:scale-[1.02]">
               <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10">
-                <span className={`px-2 py-1 text-xs rounded-full font-medium backdrop-blur-sm ${project.type === 'web' ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-purple-500/20 text-purple-300 border border-purple-500/30'}`}>
-                  {project.type === 'web' ? '🌐 Web' : '🎨 Figma'}
+                <span className={`px-2 py-1 text-xs rounded-full font-medium backdrop-blur-sm ${project.type === 'ai' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : project.type === 'mobile' || project.type === 'figma' ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30' : 'bg-blue-500/20 text-blue-300 border border-blue-500/30'}`}>
+                  {project.type === 'ai' ? '🤖 AI Solution' : project.type === 'mobile' ? '📱 Mobile App' : project.type === 'figma' ? '🎨 UI/UX Design' : '🌐 Web App'}
                 </span>
               </div>
 
@@ -306,7 +308,7 @@ export default function ProjectsSection({ scrollToSection }) {
                 <div className="sm:hidden absolute bottom-2 left-2 right-2 flex gap-2">
                   {project.link !== '#' && (
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex-1 px-3 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-xs font-medium transition-all flex items-center justify-center gap-1">
-                      {project.type === 'web' ? 'Live Demo' : 'View Design'} 
+                      {project.type === 'figma' || project.type === 'mobile' ? 'View Design' : 'Live Demo'} 
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   )}
@@ -327,7 +329,7 @@ export default function ProjectsSection({ scrollToSection }) {
                 <div className="hidden sm:flex absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 items-center justify-center gap-2">
                   {project.link !== '#' ? (
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 flex items-center gap-1">
-                      {project.type === 'web' ? 'Live Demo' : 'View Design'} 
+                      {project.type === 'figma' || project.type === 'mobile' ? 'View Design' : 'Live Demo'} 
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   ) : (
@@ -355,7 +357,7 @@ export default function ProjectsSection({ scrollToSection }) {
                 </p>
                 <div className="flex flex-wrap gap-1 mb-3">
                   {project.tech.slice(0, 3).map((t, i) => (
-                    <span key={i} className={`px-2 py-1 text-xs rounded-full backdrop-blur-sm ${project.type === 'web' ? 'bg-blue-500/10 text-blue-400' : 'bg-purple-500/10 text-purple-400'}`}>
+                    <span key={i} className={`px-2 py-1 text-xs rounded-full backdrop-blur-sm ${project.type === 'figma' || project.type === 'mobile' ? 'bg-purple-500/10 text-purple-400' : project.type === 'ai' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-blue-500/10 text-blue-400'}`}>
                       {t}
                     </span>
                   ))}
@@ -431,7 +433,7 @@ export default function ProjectsSection({ scrollToSection }) {
                   <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3">
                     {currentProject.link !== '#' && (
                       <a href={currentProject.link} target="_blank" rel="noopener noreferrer" className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-500 hover:bg-blue-600 rounded-lg flex items-center justify-center gap-2 text-xs sm:text-sm transition-all flex-1 sm:flex-none">
-                        {currentProject.type === 'web' ? 'Live Demo' : 'View Design'} 
+                        {currentProject.type === 'figma' || currentProject.type === 'mobile' ? 'View Design' : 'Live Demo'} 
                         <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
                       </a>
                     )}

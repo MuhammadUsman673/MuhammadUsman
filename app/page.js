@@ -194,13 +194,13 @@ const skills = useMemo(() => [
             Hi, I'm <span className="text-blue-500 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">M Usman</span>
           </h1>
           
-          <h2 className={`text-xl sm:text-2xl md:text-4xl font-light text-gray-400 mb-6 sm:mb-8 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            Full Stack Developer & Figma Designer
-          </h2>
+        <h2 className={`text-xl sm:text-2xl md:text-4xl font-light text-gray-400 mb-6 sm:mb-8 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+  Software Engineer | AI-Powered Web & App Developer
+</h2>
           
-          <p className={`text-base sm:text-lg text-gray-500 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I craft exceptional digital experiences using MERN stack and create stunning designs in Figma. With 3+ years of experience, I turn ideas into reality.
-          </p>
+         <p className={`text-base sm:text-lg text-gray-500 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+  I build AI-powered web and mobile applications for startups and businesses using MERN Stack, Next.js, and Node.js. With 5+ years of experience and 30+ projects delivered, I turn ideas into scalable, high-performance digital products.
+</p>
 
           <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-12 px-4 transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <button onClick={() => scrollToSection('contact')} className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group">
@@ -240,18 +240,18 @@ const skills = useMemo(() => [
             <div className="animate-on-scroll">
               <h2 className="text-sm text-blue-500 font-semibold mb-4 uppercase tracking-wider">About Me</h2>
               <h3 className="text-4xl font-bold mb-6">Turning Ideas Into Reality</h3>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                I'm a passionate Full Stack Developer and Figma Designer with over 3 years of experience creating exceptional digital experiences.
-              </p>
+             <p className="text-gray-400 leading-relaxed mb-6">
+  I'm a Software Engineer with 5+ years of experience building AI-powered web and app products for startups and businesses. I specialize in MERN Stack, Next.js, and Node.js, delivering scalable, high-performance digital solutions.
+</p>
               <p className="text-gray-400 leading-relaxed mb-6">
                 Specializing in MERN stack, I build scalable web applications that not only look stunning but perform flawlessly.
               </p>
               
               <div className="grid grid-cols-3 gap-6 mb-8">
                 {[
-                  { number: '10+', label: 'Projects' },
-                  { number: '3+', label: 'Years Exp' },
-                  { number: '10+', label: 'Clients' }
+                  { number: '30+', label: 'Projects' },
+                  { number: '5+', label: 'Years Exp' },
+                  { number: '50+', label: 'Clients' }
                 ].map((stat, index) => (
                   <div key={index} className="text-center group">
                     <div className="text-3xl font-bold text-blue-500 mb-1">{stat.number}</div>
@@ -350,25 +350,32 @@ const skills = useMemo(() => [
           {/* Certifications Section */}
           <div className="mt-16 animate-on-scroll">
             <h4 className="text-2xl font-bold text-center mb-8">Certifications & Courses</h4>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-blue-500/50 transition-all duration-500 group hover:scale-105">
                 <h5 className="font-semibold text-lg mb-2 group-hover:text-blue-500 transition-colors duration-300">
-                  MERN Stack Development
+                  AI Development
                 </h5>
-                <p className="text-gray-400 text-sm mb-3">Complete Web Development Bootcamp</p>
+                <p className="text-gray-400 text-sm mb-3">OpenAI API, LLM Chatbots, RAG & AI Agents</p>
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-blue-400 bg-blue-500/10 px-2 py-1 rounded">Completed</span>
-                  <span className="text-xs text-gray-500">2023</span>
                 </div>
               </div>
               <div className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-blue-500/50 transition-all duration-500 group hover:scale-105">
                 <h5 className="font-semibold text-lg mb-2 group-hover:text-blue-500 transition-colors duration-300">
-                  UI/UX Design in Figma
+                  Web Development
                 </h5>
-                <p className="text-gray-400 text-sm mb-3">Advanced Design Principles & Prototyping</p>
+                <p className="text-gray-400 text-sm mb-3">MERN Stack & Next.js Full-Stack Development</p>
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-blue-400 bg-blue-500/10 px-2 py-1 rounded">Completed</span>
-                  <span className="text-xs text-gray-500">2022</span>
+                </div>
+              </div>
+              <div className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-blue-500/50 transition-all duration-500 group hover:scale-105">
+                <h5 className="font-semibold text-lg mb-2 group-hover:text-blue-500 transition-colors duration-300">
+                  Mobile App Development
+                </h5>
+                <p className="text-gray-400 text-sm mb-3">Cross-Platform iOS & Android with React Native & Flutter</p>
+                <div className="flex justify-between items-center">
+                  <span className="text-xs text-blue-400 bg-blue-500/10 px-2 py-1 rounded">Completed</span>
                 </div>
               </div>
             </div>
@@ -389,10 +396,10 @@ const skills = useMemo(() => [
         style={{ transitionDelay: '0ms' }}
       >
         <div className="absolute left-0 top-0 w-4 h-4 -translate-x-[9px] bg-blue-500 rounded-full group-hover:scale-150 transition-transform duration-300" />
-        <div className="text-sm text-blue-500 font-semibold mb-2 group-hover:translate-x-2 transition-transform duration-300">Feb 2023 – June 2024</div>
-        <h4 className="text-xl font-bold mb-1 group-hover:text-blue-500 transition-colors duration-300">Frontend Developer</h4>
-        <div className="text-gray-400 mb-3 group-hover:translate-x-2 transition-transform duration-300">SlashCart</div>
-        <p className="text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors duration-300">Developed responsive user interfaces with React.js and Tailwind CSS. Converted Figma designs into pixel-perfect, interactive components. Built and managed state for dynamic user experiences. Optimized performance and participated in agile delivery cycles.</p>
+        <div className="text-sm text-blue-500 font-semibold mb-2 group-hover:translate-x-2 transition-transform duration-300">Apr 2023 – Present</div>
+        <h4 className="text-xl font-bold mb-1 group-hover:text-blue-500 transition-colors duration-300">Full-Stack Engineer | Web Applications & AI</h4>
+        <div className="text-gray-400 mb-3 group-hover:translate-x-2 transition-transform duration-300">Axiom World · Full-time · Lahore, Punjab, Pakistan (On-site)</div>
+        <p className="text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors duration-300">Built and maintained scalable web and mobile applications as a full-stack engineer (React.js, Next.js, Node.js, MongoDB), including REST APIs, AI integrations (OpenAI), and AWS deployments with CI/CD. Delivered features end to end in Agile teams, with a focus on performance, clean code and reliability.</p>
       </div>
 
       <div
@@ -400,21 +407,17 @@ const skills = useMemo(() => [
         style={{ transitionDelay: '200ms' }}
       >
         <div className="absolute left-0 top-0 w-4 h-4 -translate-x-[9px] bg-blue-500 rounded-full group-hover:scale-150 transition-transform duration-300" />
-        <div className="text-sm text-blue-500 font-semibold mb-2 group-hover:translate-x-2 transition-transform duration-300">Aug 2024 – June 2025</div>
-        <h4 className="text-xl font-bold mb-1 group-hover:text-blue-500 transition-colors duration-300">MERN Stack Web Developer</h4>
-        <div className="text-gray-400 mb-3 group-hover:translate-x-2 transition-transform duration-300">HiSkyTech</div>
-        <p className="text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors duration-300">Developed full-stack web applications using MERN (MongoDB, Express.js, React.js, Node.js). Built responsive frontend components with React.js and Tailwind CSS. Translated Figma designs into functional, high-performance features with cross-functional teams. Integrated RESTful APIs and managed scalable backend services.</p>
-      </div>
-
-      <div
-        className="relative pl-8 pb-8 border-l-2 border-white/10 animate-on-scroll group"
-        style={{ transitionDelay: '400ms' }}
-      >
-        <div className="absolute left-0 top-0 w-4 h-4 -translate-x-[9px] bg-blue-500 rounded-full group-hover:scale-150 transition-transform duration-300" />
-        <div className="text-sm text-blue-500 font-semibold mb-2 group-hover:translate-x-2 transition-transform duration-300"></div>
-        <h4 className="text-xl font-bold mb-1 group-hover:text-blue-500 transition-colors duration-300">Business Developer – Upwork</h4>
-        <div className="text-gray-400 mb-3 group-hover:translate-x-2 transition-transform duration-300">Devix (Remote)</div>
-        <p className="text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors duration-300">Expanded client base and managed key freelance projects on Upwork. Translated requirements into clear technical proposals and project plans. Maintained 100% Job Success Score as a Top-Rated freelancer. Built long-term client relationships to support business growth.</p>
+        <div className="text-sm text-blue-500 font-semibold mb-2 group-hover:translate-x-2 transition-transform duration-300">Mar 2022 – Present</div>
+        <h4 className="text-xl font-bold mb-1 group-hover:text-blue-500 transition-colors duration-300">Full-Stack Developer | Web Apps & AI Solutions</h4>
+        <div className="text-gray-400 mb-3 group-hover:translate-x-2 transition-transform duration-300">Upwork · Freelance · Remote</div>
+        <p className="text-gray-500 leading-relaxed mb-3 group-hover:text-gray-400 transition-colors duration-300">Developing scalable web applications and AI-powered solutions using React.js, Next.js, Node.js, Express.js, and MongoDB.</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors duration-300">
+          <li>Build responsive web applications and full-stack solutions.</li>
+          <li>Develop REST APIs, backend services, and third-party integrations.</li>
+          <li>Integrate OpenAI, LLMs, and AI-powered automation.</li>
+          <li>Optimize application performance, scalability, and user experience.</li>
+          <li>Manage deployment and maintenance of web applications.</li>
+        </ul>
       </div>
     </div>
   </div>
